@@ -18,6 +18,11 @@
                 clearInterval(interval);
             }
 
+            if (window.location.href.includes('/shorts')) {
+                // no shorts
+                history.back();
+            }
+
             else {
                 // console.log('not found');
                 ++retryCount;
