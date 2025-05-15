@@ -1,34 +1,39 @@
-function blockHomeRecommendations() {
- document.getElementById('contents') &&
-  (document.getElementById('contents').style.display = 'none')
-}
+ function blockHomeRecommendations() {
+        // console.log('blocking');
+        let retryCount = 0;
+        const interval = setInterval(() => {
+            if (document.getElementById('contents')) {
+                document.getElementById('contents').style.display = 'none';
+                clearInterval(interval);
+            } 
+            
+            if (document.querySelector("[role='tablist']")) {
+                document.querySelector("[role='tablist']").style.display = 'none';
+                clearInterval(interval);
+            }
 
-function blockWatchPageRecommendations() {
-  document.getElementById('secondary-inner') &&
-  (document.getElementById('secondary-inner').style.display = 'none')
-}
+            if (document.getElementById('secondary-inner') && window.location.href.includes("/watch")) {
+                document.getElementById('secondary-inner').style.display = 'none';
+                console.log('blocked lazy list1')
+                clearInterval(interval);
+            }
 
-function blockShorts() {
-  [...document.getElementsByClassName('style-scope ytd-reel-shelf-renderer')].forEach(e => {
-    e.style.display = 'none'
-  })
-}
+            else {
+                // console.log('not found');
+                ++retryCount;
+            }
+
+            if (retryCount > 50) {
+                clearInterval(interval);
+            }
+        }, 100)
+    }
 
 function init() {
   blockHomeRecommendations();
   new MutationObserver(function (mutations) {
-    if (window.location.href.includes('youtube') && window.location.href.includes('watch')) {
-      blockWatchPageRecommendations();
-      setTimeout(() => {
-        blockWatchPageRecommendations();
-      }, 1e3);
-    }
-    else if (window.location.href.includes('youtube') && window.location.href.includes('results')) {
-      blockShorts();
-      setTimeout(() => {
-        blockShorts();
-      }, 1e3);
-    }
+    blockHomeRecommendations();
+    console.log('url changed');
   }).observe(
     document.querySelector('title'),
     { subtree: true, characterData: true, childList: true }
@@ -38,5 +43,6 @@ function init() {
 
 if (window.location.href.includes('youtube')) {
   init();
+  console.log('my script')
 }
 
