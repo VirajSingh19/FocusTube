@@ -36,7 +36,6 @@ function init() {
   blockHomeRecommendations();
   new MutationObserver(function (mutations) {
     blockHomeRecommendations();
-    console.log('url changed');
   }).observe(
     document.querySelector('title'),
     { subtree: true, characterData: true, childList: true }
@@ -46,6 +45,5 @@ function init() {
 
 if (window.location.href.includes('youtube')) {
   init();
-  console.log('my script')
 }
 
