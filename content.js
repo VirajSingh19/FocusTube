@@ -1,5 +1,4 @@
  function blockHomeRecommendations() {
-        // console.log('blocking');
         let retryCount = 0;
         const interval = setInterval(() => {
             if (document.getElementById('contents')) {
@@ -24,7 +23,6 @@
             }
 
             else {
-                // console.log('not found');
                 ++retryCount;
             }
 
