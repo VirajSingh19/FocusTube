@@ -7,6 +7,15 @@ YouTube Recommended Video Blocker is a Chrome extension that blocks the recommen
 
 ![Screenshot](home.png)
 
+
+
+You can even block recommendations on Safari. Using [Stay for Safari](https://apps.apple.com/us/app/stay-for-safari/id1591620171)
+
+![IMG_4132](https://github.com/user-attachments/assets/41c73cba-8702-434e-826d-786694e2eb66)
+
+![IMG_4134](https://github.com/user-attachments/assets/c3ab819c-c8c1-4405-9cc0-fbeeca929836)
+
+
 ## Features
 
 - Blocks the recommended videos section on YouTube's home page.
