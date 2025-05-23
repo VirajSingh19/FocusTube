@@ -20,6 +20,11 @@
                 clearInterval(interval);
             }
 
+            if (document.querySelector('[aria-label="Search YouTube"]')) {
+                document.querySelector('[aria-label="Search YouTube"]').style.display = 'none';
+                clearInterval(interval);
+            }
+            
             if (document.querySelectorAll('lazy-list').length && window.location.href.includes("/watch")) {
                 document.querySelectorAll('lazy-list').forEach(n => {n.style.display = 'none'});
                 clearInterval(interval);
