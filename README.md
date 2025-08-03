@@ -24,6 +24,9 @@ You can even block recommendations on Safari. Using [mWeb.js script](https://git
 
 ## Installation
 
+<img width="776" alt="Screenshot 2025-05-17 at 7 31 50 PM" src="https://github.com/user-attachments/assets/6d2d62f6-2cd7-4c21-97c2-4815090f7a7a" />
+
+
 1. Clone or download this repository to your local machine.
 2. Open Google Chrome browser and go to `chrome://extensions`.
 3. Enable the **Developer mode** by toggling the switch located at the top right corner.
